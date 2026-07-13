@@ -16,6 +16,7 @@ interface ISort
     void SortDesc();
     void SortByParam(bool isAsc);
 }
+
 class IntArray : IOutput, IMath, ISort
 {
     private int[] data;
@@ -33,13 +34,13 @@ class IntArray : IOutput, IMath, ISort
     {
         Console.Write("Array: ");
         for (int i = 0; i < count; i++)
-            Console.Write(data[i] + " ");
+            Console.Write($"{data[i]} ");
         Console.WriteLine();
     }
 
     public void Show(string info)
     {
-        Console.WriteLine("Info: " + info);
+        Console.WriteLine($"Info: {info}");
         Show();
     }
 
@@ -117,6 +118,7 @@ class IntArray : IOutput, IMath, ISort
             SortDesc();
     }
 }
+
 interface IShape
 {
     double CalculateArea();
@@ -189,6 +191,7 @@ class Triangle : IShape
         return A + B + C;
     }
 }
+
 interface IDrivable
 {
     void StartEngine();
@@ -209,17 +212,17 @@ class Car : IDrivable
 
     public void StartEngine()
     {
-        Console.WriteLine(Brand + ": engine started. Vroom!");
+        Console.WriteLine($"{Brand}: engine started. Vroom!");
     }
 
     public void StopEngine()
     {
-        Console.WriteLine(Brand + ": engine stopped.");
+        Console.WriteLine($"{Brand}: engine stopped.");
     }
 
     public void Drive()
     {
-        Console.WriteLine(Brand + " (" + Year + "): driving on the road.");
+        Console.WriteLine($"{Brand} ({Year}): driving on the road.");
     }
 }
 
@@ -236,30 +239,31 @@ class Motorcycle : IDrivable
 
     public void StartEngine()
     {
-        Console.WriteLine(Brand + " motorcycle: engine started. Roar!");
+        Console.WriteLine($"{Brand} motorcycle: engine started. Roar!");
     }
 
     public void StopEngine()
     {
-        Console.WriteLine(Brand + " motorcycle: engine stopped.");
+        Console.WriteLine($"{Brand} motorcycle: engine stopped.");
     }
 
     public void Drive()
     {
-        Console.WriteLine(Brand + " (" + Type + "): riding on the road.");
+        Console.WriteLine($"{Brand} ({Type}): riding on the road.");
     }
 }
+
 // Task 1, 2, 3 
 IntArray arr = new IntArray(new int[] { 5, 2, 9, 1, 7, 3, 8 });
 
 arr.Show();
 arr.Show("My test array");
 
-Console.WriteLine("Max: " + arr.Max());
-Console.WriteLine("Min: " + arr.Min());
-Console.WriteLine("Avg: " + arr.Avg());
-Console.WriteLine("Search 7: " + arr.Search(7));
-Console.WriteLine("Search 99: " + arr.Search(99));
+Console.WriteLine($"Max: {arr.Max()}");
+Console.WriteLine($"Min: {arr.Min()}");
+Console.WriteLine($"Avg: {arr.Avg()}");
+Console.WriteLine($"Search 7: {arr.Search(7)}");
+Console.WriteLine($"Search 99: {arr.Search(99)}");
 
 arr.SortAsc();
 arr.Show("Sorted ascending");
@@ -277,9 +281,9 @@ Circle circle = new Circle(5);
 Rectangle rect = new Rectangle(4, 6);
 Triangle triangle = new Triangle(3, 4, 5);
 
-Console.WriteLine("Circle — Area: " + circle.CalculateArea().ToString("F2") + ", Perimeter: " + circle.CalculatePerimeter().ToString("F2"));
-Console.WriteLine("Rectangle — Area: " + rect.CalculateArea() + ", Perimeter: " + rect.CalculatePerimeter());
-Console.WriteLine("Triangle — Area: " + triangle.CalculateArea().ToString("F2") + ", Perimeter: " + triangle.CalculatePerimeter());
+Console.WriteLine($"Circle — Area: {circle.CalculateArea():F2}, Perimeter: {circle.CalculatePerimeter():F2}");
+Console.WriteLine($"Rectangle — Area: {rect.CalculateArea()}, Perimeter: {rect.CalculatePerimeter()}");
+Console.WriteLine($"Triangle — Area: {triangle.CalculateArea():F2}, Perimeter: {triangle.CalculatePerimeter()}");
 
 Console.WriteLine();
 
