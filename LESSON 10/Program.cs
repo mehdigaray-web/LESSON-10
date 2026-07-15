@@ -1,3 +1,53 @@
+// Main 
+
+IntArray arr = new IntArray(new int[] { 5, 2, 9, 1, 7, 3, 8 });
+
+arr.Show();
+arr.Show("My test array");
+
+Console.WriteLine($"Max: {arr.Max()}");
+Console.WriteLine($"Min: {arr.Min()}");
+Console.WriteLine($"Avg: {arr.Avg()}");
+Console.WriteLine($"Search 7: {arr.Search(7)}");
+Console.WriteLine($"Search 99: {arr.Search(99)}");
+
+arr.SortAsc();
+arr.Show("Sorted ascending");
+
+arr.SortDesc();
+arr.Show("Sorted descending");
+
+arr.SortByParam(true);
+arr.Show("SortByParam(true)");
+
+Console.WriteLine();
+
+// Test 4 — IShape
+Circle circle = new Circle(5);
+Rectangle rect = new Rectangle(4, 6);
+Triangle triangle = new Triangle(3, 4, 5);
+
+Console.WriteLine($"Circle — Area: {circle.CalculateArea():F2}, Perimeter: {circle.CalculatePerimeter():F2}");
+Console.WriteLine($"Rectangle — Area: {rect.CalculateArea()}, Perimeter: {rect.CalculatePerimeter()}");
+Console.WriteLine($"Triangle — Area: {triangle.CalculateArea():F2}, Perimeter: {triangle.CalculatePerimeter()}");
+
+Console.WriteLine();
+
+// Test 5 — IDrivable
+Car car = new Car("Toyota", 2021);
+Motorcycle moto = new Motorcycle("Honda", "Sport");
+
+car.StartEngine();
+car.Drive();
+car.StopEngine();
+
+Console.WriteLine();
+
+moto.StartEngine();
+moto.Drive();
+moto.StopEngine();
+
+
 interface IOutput
 {
     void Show();
@@ -252,51 +302,3 @@ class Motorcycle : IDrivable
         Console.WriteLine($"{Brand} ({Type}): riding on the road.");
     }
 }
-
-// Task 1, 2, 3 
-IntArray arr = new IntArray(new int[] { 5, 2, 9, 1, 7, 3, 8 });
-
-arr.Show();
-arr.Show("My test array");
-
-Console.WriteLine($"Max: {arr.Max()}");
-Console.WriteLine($"Min: {arr.Min()}");
-Console.WriteLine($"Avg: {arr.Avg()}");
-Console.WriteLine($"Search 7: {arr.Search(7)}");
-Console.WriteLine($"Search 99: {arr.Search(99)}");
-
-arr.SortAsc();
-arr.Show("Sorted ascending");
-
-arr.SortDesc();
-arr.Show("Sorted descending");
-
-arr.SortByParam(true);
-arr.Show("SortByParam(true)");
-
-Console.WriteLine();
-
-// Test 4 — IShape
-Circle circle = new Circle(5);
-Rectangle rect = new Rectangle(4, 6);
-Triangle triangle = new Triangle(3, 4, 5);
-
-Console.WriteLine($"Circle — Area: {circle.CalculateArea():F2}, Perimeter: {circle.CalculatePerimeter():F2}");
-Console.WriteLine($"Rectangle — Area: {rect.CalculateArea()}, Perimeter: {rect.CalculatePerimeter()}");
-Console.WriteLine($"Triangle — Area: {triangle.CalculateArea():F2}, Perimeter: {triangle.CalculatePerimeter()}");
-
-Console.WriteLine();
-
-// Test 5 — IDrivable
-Car car = new Car("Toyota", 2021);
-Motorcycle moto = new Motorcycle("Honda", "Sport");
-
-car.StartEngine();
-car.Drive();
-car.StopEngine();
-
-Console.WriteLine();
-
-moto.StartEngine();
-moto.Drive();
-moto.StopEngine();
